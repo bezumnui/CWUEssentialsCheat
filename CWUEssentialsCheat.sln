@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoInjectionTemplate", "MonoInjectionTemplate\MonoInjectionTemplate.csproj", "{1E38F80B-5711-43E2-B10F-082245417D0B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CWUEssentialsCheat", "CWUEssentialsCheat\CWUEssentialsCheat.csproj", "{1E38F80B-5711-43E2-B10F-082245417D0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
