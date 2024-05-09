@@ -394,7 +394,6 @@
         <Compile Include="CheatFieldFloat.cs" />
         <Compile Include="DrawGUI.cs" />
         <Compile Include="HackMain.cs" />
-        <Compile Include="HackSpawn.cs" />
         <Compile Include="HackValues.cs" />
         <Compile Include="Items.cs" />
         <Compile Include="Loader.cs" />
