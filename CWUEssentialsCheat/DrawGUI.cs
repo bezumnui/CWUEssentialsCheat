@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using MonoInjectionTemplate.callableElements;
+using CWUEssentialsCheat.callableElements;
 using Photon.Pun;
 using UnityEngine;
 
-namespace MonoInjectionTemplate
+namespace CWUEssentialsCheat
 {
     
     

@@ -2,7 +2,7 @@
 using JetBrains.Annotations;
 using Unity.VisualScripting;
 
-namespace MonoInjectionTemplate.callableElements
+namespace CWUEssentialsCheat.callableElements
 {
     public class StubElement : CallableElement
     {

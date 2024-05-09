@@ -1,4 +1,4 @@
-﻿namespace MonoInjectionTemplate
+﻿namespace CWUEssentialsCheat
 {
     public class CheatFieldBool
     {

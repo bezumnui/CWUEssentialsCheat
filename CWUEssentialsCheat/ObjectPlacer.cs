@@ -2,7 +2,7 @@
 using Photon.Pun;
 using UnityEngine;
 
-namespace MonoInjectionTemplate
+namespace CWUEssentialsCheat
 {
     public enum OpState
     {
@@ -23,6 +23,7 @@ namespace MonoInjectionTemplate
         
         private void SpawnObject()
         {
+            // PhotonNetwork.Instantiate(_furniture.ModelName, objectPosition, objectRotation);
            HackMain.Instance.photonView.RPC("RPCA_SpawnFurniture", RpcTarget.MasterClient, _furniture.ModelName, objectPosition, objectRotation);
 
         }

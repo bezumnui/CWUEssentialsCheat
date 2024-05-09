@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace MonoInjectionTemplate
+namespace CWUEssentialsCheat
 {
     public class Loader
     {

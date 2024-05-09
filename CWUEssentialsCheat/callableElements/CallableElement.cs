@@ -1,7 +1,7 @@
 ﻿using System;
 using JetBrains.Annotations;
 
-namespace MonoInjectionTemplate
+namespace CWUEssentialsCheat
 {
 
     public abstract class CallableElement

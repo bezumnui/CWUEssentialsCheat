@@ -2,7 +2,7 @@
 using Photon.Pun;
 using UnityEngine;
 
-namespace MonoInjectionTemplate
+namespace CWUEssentialsCheat
 {
     public class PlayerHackController : MonoBehaviour
     {

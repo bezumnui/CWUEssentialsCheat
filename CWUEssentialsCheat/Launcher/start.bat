@@ -1,0 +1,1 @@
+.\smi.exe inject -p "Content Warning" -a "../bin/Debug/CWUEssentialsCheat.dll" -n CWUEssentialsCheat -c Loader -m Load

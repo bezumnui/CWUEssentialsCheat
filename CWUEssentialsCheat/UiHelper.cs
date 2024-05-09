@@ -2,7 +2,7 @@
 using System.Reflection;
 using UnityEngine;
 
-namespace MonoInjectionTemplate
+namespace CWUEssentialsCheat
 {
     public static class UIHelper
     {
@@ -12,11 +12,9 @@ namespace MonoInjectionTemplate
             margin,
             controlHeight,
             controlDist,
-            nextControlY,
-            scale;
+            nextControlY;
 
         private static GUIStyle _styleButton = new GUIStyle(GUI.skin.button);
-        
         
         
         private static Texture2D MakeTex(int width, int height, Color col)
@@ -34,7 +32,6 @@ namespace MonoInjectionTemplate
         public static void Begin(string text, float _x, float _y, float _width, float _height,
             float _margin, float _controlHeight, float _controlDist, float nextY = 20f, float _scale = 1f)
         {
-            scale = _scale;
             x = _scale * _x;
             y = _scale *_y;
             width = _scale *_width;

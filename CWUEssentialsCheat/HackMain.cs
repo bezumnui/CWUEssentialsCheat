@@ -8,7 +8,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using Zorro.Core;
 
-namespace MonoInjectionTemplate
+namespace CWUEssentialsCheat
 {
     public class HackMain : MonoBehaviour
     {
@@ -23,6 +23,7 @@ namespace MonoInjectionTemplate
         private static int currentItem;
 
         public PhotonView photonView;
+        public PingMasterClient ping;
 
         private void OnEnable()
         {
@@ -31,13 +32,17 @@ namespace MonoInjectionTemplate
 
         private void Start()
         {
+            ping = PingMasterClient.Init();
+
             photonView = gameObject.AddComponent<PhotonView>();
             placer = gameObject.AddComponent<ObjectPlacer>();
             photonView.ViewID = 7766;
             photonView.Synchronization = ViewSynchronization.ReliableDeltaCompressed;
-            InitItems();
+
+            Items.InitItems();
             currentItem = 35;
         }
+        
         [PunRPC]
         private void SpawnMonsterHM(string monster, Vector3 groundPos)
         {
@@ -49,50 +54,8 @@ namespace MonoInjectionTemplate
         {
             PhotonNetwork.Instantiate(name, pos, rotation);
         }
-        private static void InitItems()
-        {
-
-            Items.Regular = new Dictionary<string, byte>();
-            Items.Emotions = new Dictionary<string, byte>();
-            Items.Spawnable = new Dictionary<string, byte>();
-            Items.Upgrades = new Dictionary<string, byte>();
-            Items.Misc = new Dictionary<string, byte>();
-            
-            
-            foreach (var item in SingletonAsset<ItemDatabase>.Instance.Objects)
-            {
-                var itemName = item.displayName;
-                if (itemName.Equals(string.Empty)) itemName = item.name;
-                if (item.emoteInfo.animationName != "")
-                {
-                    Items.Emotions.Add(item.id + ": " + itemName, item.id);
-                    continue;
-                }
-                if (item.purchasable)
-                {
-                    switch (item.Category)
-                    {
+        
      
-                        case ShopItemCategory.Gadgets:
-                            Items.Regular.Add(item.id + ": " + itemName, item.id);
-                            continue;
-                        case ShopItemCategory.Upgrades:
-                            Items.Upgrades.Add(item.id + ": " + itemName, item.id);
-                            break;
-                    }
-                }
-
-                if (item.spawnable)
-                {
-                    Items.Spawnable.Add(item.id + ": " + itemName, item.id);
-                    continue;
-                }
-                Items.Misc.Add(item.id + ": " + itemName, item.id);
-                
-                
-            }
-
-        }
 
         private bool canFall = true;
 
@@ -257,10 +220,15 @@ namespace MonoInjectionTemplate
                 gui.DrawHost(0);
                 gui.DrawMeta(0);
                 gui.DrawFunny(0);
-                gui.DrawSpawn(1);
+                gui.DrawAllItems(1, 2, 1, 3);
+                if (ping.MasterHasCheat)
+                {
+                    gui.DrawSpawn(4);
+                    gui.DrawFurniture(5);
 
-                gui.DrawAllItems(2, 3, 2, 4);
-                gui.DrawFurniture(5);
+                };
+
+            
                 // HackValues
 
             }

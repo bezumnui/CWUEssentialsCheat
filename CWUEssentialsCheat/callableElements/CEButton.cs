@@ -1,7 +1,7 @@
 ﻿using JetBrains.Annotations;
 
 
-namespace MonoInjectionTemplate.callableElements
+namespace CWUEssentialsCheat.callableElements
 {
     public class CEButton : CallableElement
     {

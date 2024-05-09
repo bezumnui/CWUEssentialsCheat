@@ -16,7 +16,7 @@ public class FurniturePhoton
     public string ModelName;
 }
 
-namespace MonoInjectionTemplate
+namespace CWUEssentialsCheat
 {
     
     public static class HackValues

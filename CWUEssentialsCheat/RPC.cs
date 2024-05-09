@@ -3,7 +3,7 @@ using System.IO;
 using Photon.Pun;
 using UnityEngine;
 
-namespace MonoInjectionTemplate
+namespace CWUEssentialsCheat
 {
 
     public static class RPC
@@ -16,18 +16,24 @@ namespace MonoInjectionTemplate
             {
                 items[i] = (byte)Random.Range(0, 60);
             }
-            RPCA_SpawnDrone(items);
+            CallSpawnDrone(items);
         }
         public static List<string> GetAllPrefabs()
         {
             List<string> prefabPaths = new List<string>();
+            var gameObjects = Resources.LoadAll<GameObject>("");
 
-            PhotonView[] gameObjects = Resources.LoadAll<PhotonView>("");
-
-            foreach (PhotonView obj in gameObjects)
+            foreach (var obj in gameObjects)
             {
                 // if (!obj.GetComponent<PhotonView>()) continue;
-                prefabPaths.Add(obj.name + ";");
+                // var comps = obj.GetComponents<Component>();
+                var line = obj.name + " ---- ";
+                // foreach (var comp in comps)
+                // {
+                //     line += comp.ToString() + " ";
+                // }
+                prefabPaths.Add(line);
+
             }
 
             return prefabPaths;
@@ -77,7 +83,7 @@ namespace MonoInjectionTemplate
 
         }
         
-        public static void RPCA_SpawnDrone(byte[] itemIDs)
+        public static void CallSpawnDrone(byte[] itemIDs)
         {
             List<Item> list = new List<Item>();
             for (int i = 0; i < itemIDs.Length; i++)
@@ -89,9 +95,8 @@ namespace MonoInjectionTemplate
                 }
             }
 
-            var rpc = ShopHandler.Instance.gameObject.GetComponent<PhotonView>();
+            var rpc = HackTool.GetPrivateField<PhotonView>(ShopHandler.Instance, "m_PhotonView");
             rpc.RPC("RPCA_SpawnDrone", RpcTarget.All, itemIDs);
-            // Object.Instantiate(ShopHandler.Instance.droneObject, Vector3.zero, Quaternion.Euler(new Vector3(0f, -30f, 0f))).GetComponent<Drone>().items = list.ToArray();
         }
         
     }
