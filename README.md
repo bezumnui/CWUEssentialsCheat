@@ -18,11 +18,9 @@
 
 ### Infinity Stamina
 #### Your Stamina will be infinite
-![stamina](https://github.com/bezumnui/CWUEssentialsCheat/assets/57602929/4b7ba213-0dc6-4616-86bc-b233ee99723e)
 
 ### Infinity Health
 #### Your HP is updating every Screen Update to 100%. However, you still can die.  IMPORTANT: If you die you automaticly reviving. Although, if there is no body alive in room the death script will be activated and (ONLY FOR SURFACE LOCATION) all clients gameobject except the master one (room owner) will be destroyed (room recreation is needed)
-![infhp](https://github.com/bezumnui/CWUEssentialsCheat/assets/57602929/9030c779-20cb-40a2-ad57-2a31d3df089e)
 
 
 ### Speed Hack
